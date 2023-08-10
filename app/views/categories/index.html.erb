@@ -4,7 +4,7 @@
 
 <div id="categories">
   <% @categories.each do |category| %>
-    <%= render category %>
+    <p><%= category.name %></p>
     <p>
       <%= link_to "Show this category", category %>
     </p>
