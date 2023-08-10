@@ -40,6 +40,6 @@ class CategoriesController < ApplicationController
   private
     # Only allow a list of trusted parameters through.
     def category_params
-      params.fetch(:category, {})
+      params.require(:category).permit(:name, :icon)
     end
 end
