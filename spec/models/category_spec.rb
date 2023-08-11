@@ -2,7 +2,7 @@ require_relative '../rails_helper'
 
 RSpec.describe Category, type: :model do
   before(:example) do
-    @user = User.create(name: 'Fredo')
+    @user = User.create(name: 'Fredo', email: 'fred@example.com', password: "123456", role: "admin")
   end
 
   context 'Validations' do
