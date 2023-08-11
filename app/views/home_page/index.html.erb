@@ -2,14 +2,14 @@
   <h1>Fred's Store</h1>
 
     <div>
-      <p>Welcome</p>
+      <p>Welcome, #{@user.name}</p>
       <img src="https://cdn-icons-png.flaticon.com/512/520/520464.png" alt="Welcome image">
       <%= link_to "Add new category", new_category_path %>
-      <%#= button_to "Log out", destroy_user_session_path, method: :delete %>
+      <%= button_to "Log out", destroy_user_session_path, method: :delete %>
 
       <p class="text-lg">Welcome to Budget App</p>
       <img src="https://cdn-icons-png.flaticon.com/512/295/295128.png" alt="Welcome image">
-      <%#= link_to "Log in", new_user_session_path, class: "bg-blue-500 text-white px-4 py-2 mr-2 rounded hover:bg-blue-600 mb-5" %>
-      <%#= link_to "Sign up", new_user_registration_path, class: "bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" %>
+      <%= link_to "Log in", new_user_session_path %>
+      <%= link_to "Sign up", new_user_registration_path %>
     </div>
 </div>

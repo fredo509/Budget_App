@@ -1,6 +1,6 @@
 # Create Users
-userOne = User.create(name: "Fredo")
-userTwo = User.create(name: "Jhonny")
+userOne = User.create(name: "Fredo", email:"fred@example.com", password: "123456", role: "admin")
+userTwo = User.create(name: "Jhonny", email:"jhon@example.com", password: "123456")
 
 # Create Categories
 categoryOne = Category.create(name: "Shoes", icon: "icon-1", author_id: userOne)

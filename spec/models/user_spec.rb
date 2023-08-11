@@ -3,13 +3,13 @@ require_relative '../rails_helper'
 RSpec.describe User, type: :model do
   context 'Validations' do
     it 'should have a name' do
-      user = User.new(name: "Fredo St Fleur")
+      user = User.new(name: "Fredo St Fleur", email: 'fred@example.com', password: "123456")
       user.save!
       expect(user.valid?).to eq true
     end
 
     it 'should have a string name' do
-      user = User.new(name: "Fredo St Fleur")
+      user = User.new(name: "Fredo St Fleur", email: 'fred@example.com', password: "123456")
       expect(user.valid?).to eq true
     end
   end
