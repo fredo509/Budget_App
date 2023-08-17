@@ -1,7 +1,7 @@
 .welcome-page {
   background-color: rgba(255, 254, 254, 0.635);
   width: 100%;
-  height: 200vh;
+  height: auto;
   margin-top: -16px;
   padding: 0;
   display: flex;
@@ -11,23 +11,23 @@
 .logo {
   height: 50vh;
   margin: 0;
-  width: 85%;
-  background-color: rgb(23, 2, 87);
+  width: 69%;
+  background-color: #3778C2;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   padding: 20px;
   border-bottom-right-radius: 100%;
-  border-top-right-radius: 100%;
 }
 
 .logo_text {
-  color: aqua;
+  color: lightgreen;
 }
 
 .text-welcome {
-  color: lightblue;
+  color: white;
+  margin-bottom: 150px;
 }
 
 .info-user {
@@ -42,11 +42,48 @@
 
 .sign-link {
   width: 40%;
-  background-color: rgb(23, 2, 87);
+  background-color: #3778C2;;
   margin-top: 50px;
   padding: 10px;
   border-radius: 20px;
-  color: lightblue;
+  color: #434343;
   align-self: center;
   text-decoration: none;
+  border: solid #434343 2.5px;
+}
+
+.category-link {
+  width: 40%;
+  background-color: #3778C2;;
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 20px;
+  color: #434343;
+  align-self: center;
+  text-decoration: none;
+  border: solid #434343 2.5px;
+}
+
+.category-link:hover {
+  color: white;
+  border-color: #5fb523;
+}
+
+.log-out {
+  position: absolute;
+  bottom: 2;
+  right: 0;
+  margin-right: 20px;
+  width: 90px;
+  background-color: #3778C2;;
+  padding: 10px;
+  border-radius: 20px;
+  color: #434343;
+  align-self: center;
+  text-decoration: none;
+}
+
+.log-out:hover {
+  color: white;
+  border-color: #5fb523;
 }
