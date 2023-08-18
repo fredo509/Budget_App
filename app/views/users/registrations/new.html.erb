@@ -1,11 +1,26 @@
-<h2>Sign up</h2>
+<%= stylesheet_link_tag 'signIn', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="header">
+  <%= link_to "<", root_path, class:"back" %>
+  <div class="logo ls">
+    <h1 class="logo_text">G-Wallet</h1>
+  </div>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="myform">
+  <div class="welcome-back">
+    <h2>Sign up</h2>
+  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "login-form" }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
@@ -22,8 +37,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "submit-button" %>
   </div>
-<% end %>
 
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
+<% end %>
+</div>
