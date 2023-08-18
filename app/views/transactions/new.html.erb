@@ -1,9 +1,24 @@
-<h1>New transaction</h1>
+<%= stylesheet_link_tag 'signIn' %>
+<%= stylesheet_link_tag 'category_index' %>
 
-<%= render "form", transaction: @transaction %>
+<div class="cat_header">
+ <div class="i_back"> <%= link_to "<", category_path(@category), class:"back" %></div>
+ <div class="p_title">New Transaction</div>
+ <div class="i_menu"></div>
+</div>
 
-<br>
-
-<div>
-  <%= link_to "Back to transactions", transactions_path %>
+<div class="myform">
+  <%= form_with model: @transaction, url: category_transactions_path(@category), html: { class: "login-form" } do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class:"input-field",placeholder: "Enter transaction name" %>
+    </div>
+    <div class="field">
+      <%= form.label :amount %>
+      <%= form.number_field :amount, placeholder: "Enter transaction amount", class:"input-field" %>
+    </div>
+    <div >
+      <%= form.submit "Create Transaction", class: "submit-button" %>
+    </div>
+  <% end %>
 </div>
