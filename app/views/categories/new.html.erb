@@ -1,9 +1,24 @@
-<h1>New category</h1>
+<%= stylesheet_link_tag 'signIn' %>
+<%= stylesheet_link_tag 'category_index' %>
 
-<%= render "form", category: @category %>
-
-<br>
-
-<div>
-  <%= link_to "Back to categories", categories_path %>
+<div class="cat_header">
+ <div class="i_back"> <%= link_to "<", categories_path, class:"back" %></div>
+ <div class="p_title">New Categories</div>
+ <div class="i_menu"></div>
 </div>
+<div class="myform">
+  <%= form_with model: @category,  html: { class: "login-form" } do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class:"input-field" %>
+    </div>
+    <div class="field">
+      <%= form.label :icon %>
+      <%= form.text_field :icon, placeholder: "Icon URL", class:"input-field" %>
+    </div>
+    <div >
+      <%= form.submit "Add Category", class: "submit-button" %>
+    </div>
+  <% end %>
+</div>
+

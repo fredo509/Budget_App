@@ -1,10 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @category %>
-
 <div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+  <h1><%= @category.name %></h1>
+  <% if @total == 0 %>
+  <p>No transactions found</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/8541/8541407.png" alt="No transactions found">
+<% else %>
+  <p>$<%= @total %></p>
+    <div class="flex flex-col gap-6">
+     <% @transactions.each do |transaction| %>
+      <div class="flex items-center p-6 rounded-lg bg-white shadow-lg w-ful border gap-4">
+        <%= image_tag(@category.icon, alt: "Icon pic", class: "w-12 h-12") %>
+        <div class="flex flex-col">
+          <div class="flex justify-between text-gray-600 font-bold gap-4">
+            <p class="text-sm font-medium mb-3"><%= transaction.name %></p>
+            <p class="font-medium"><%= transaction.amount %></p>
+          </div>
+          <hr class="my-1">
+          <div class="text-gray-600 text-start">
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+<% end %>
+  <%= link_to "Add new transaction", new_category_transaction_path(@category), class: "bg-blue-400 text-white py-2 px-12 text-lg rounded-lg mt-6 absolute bottom-10" %>
+  <%= link_to "Back", categories_path, class: "text-blue-500 py-2 px-4 rounded-lg absolute bottom-2" %>
 </div>
