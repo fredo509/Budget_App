@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
       redirect_to categories_path
     end
     @transactions = Transaction.where(category_id: params[:id])
+    @total_amount = Transaction.where(category_id: @category.id).sum(:amount)
   end
 
   def new

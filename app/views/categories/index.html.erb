@@ -6,7 +6,9 @@
 </div>
 
 <div id="categories">
+ 
   <ul class="category_block">
+   <%= link_to "New category", new_category_path, class:"log-out" %>
     <% @categories.each do |category| %>
       <li class="category_card">
         <%= link_to category, class:"category_card" do %>
@@ -26,4 +28,3 @@
   </ul>  
 </div>
 
-<%= link_to "New category", new_category_path, class:"log-out" %>

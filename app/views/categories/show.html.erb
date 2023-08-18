@@ -1,27 +1,50 @@
+<%= stylesheet_link_tag 'category_index' %>
+<%= stylesheet_link_tag 'category_show' %>
+
+<div class="cat_header">
+ <div class="i_back"> <%= link_to "<", categories_path, class:"back" %></div>
+ <div class="p_title"> Transactions </div>
+ <div class="i_menu"></div>
+</div>
 <div>
-  <h1><%= @category.name %></h1>
-  <% if @total == 0 %>
-  <p>No transactions found</p>
-  <img src="https://cdn-icons-png.flaticon.com/512/8541/8541407.png" alt="No transactions found">
-<% else %>
-  <p>$<%= @total %></p>
-    <div class="flex flex-col gap-6">
+
+ <ul class="category_block" style="margin-bottom: -45px">
+      <li class="category_card">
+          <div class="cat_img">
+            <%= image_tag(@category.icon, alt: "Icon pic", class:"cat_img") %>
+          </div>
+          <div class="cat_nd">
+            <p class="cat_title">Category : <%= "#{@category.name}" %></p>
+            <p><%= @category.created_at.to_date %></p>
+          </div>
+          <div class="cat_t">
+            <p class="cat_amount">Total Amount $<%= @total_amount %></p>
+          </div>
+      </li>  
+  </ul> 
+
+  <% if @total_amount == 0 %>
+    <p style="text-align: center; color:red">No transactions found</p>
+    <div style="display:flex; justify-content:center">
+      <img src="https://cdn-icons-png.flaticon.com/512/8541/8541407.png" alt="No transactions_img" style="width: 50%;">
+    </div>  
+ <% else %>
+    <ul class="category_block">
      <% @transactions.each do |transaction| %>
-      <div class="flex items-center p-6 rounded-lg bg-white shadow-lg w-ful border gap-4">
-        <%= image_tag(@category.icon, alt: "Icon pic", class: "w-12 h-12") %>
-        <div class="flex flex-col">
-          <div class="flex justify-between text-gray-600 font-bold gap-4">
-            <p class="text-sm font-medium mb-3"><%= transaction.name %></p>
-            <p class="font-medium"><%= transaction.amount %></p>
-          </div>
-          <hr class="my-1">
-          <div class="text-gray-600 text-start">
-          </div>
-        </div>
-      </div>
-    <% end %>
-    </div>
-<% end %>
-  <%= link_to "Add new transaction", new_category_transaction_path(@category), class: "bg-blue-400 text-white py-2 px-12 text-lg rounded-lg mt-6 absolute bottom-10" %>
-  <%= link_to "Back", categories_path, class: "text-blue-500 py-2 px-4 rounded-lg absolute bottom-2" %>
+        <li class="category_card transaction_card">
+            <div class="cat_img">
+              <%= image_tag(@category.icon, alt: "Icon pic", class:"cat_img") %>
+            </div>
+            <div class="cat_nd">
+              <p class="cat_title">Transaction : <%= "#{transaction.name}" %></p>
+              <p><%= transaction.created_at.to_date %></p>
+            </div>
+            <div class="cat_t">
+              <p class="cat_"> Amount $<%= transaction.amount %></p>
+            </div> 
+        </li>  
+      <% end %>  
+    </ul> 
+  <% end %>
+  <%= link_to "Add transaction", new_category_transaction_path(@category), class: "log-out" %>
 </div>
