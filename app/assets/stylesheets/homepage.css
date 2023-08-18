@@ -68,23 +68,3 @@
   color: white;
   border-color: #5fb523;
 }
-
-.log-out {
-  position: absolute;
-  bottom: 2;
-  right: 0;
-  margin-right: 20px;
-  width: 90px;
-  background-color: #3778C2;;
-  padding: 10px;
-  border-radius: 20px;
-  color: #434343;
-  align-self: center;
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-.log-out:hover {
-  color: white;
-  border-color: #5fb523;
-}

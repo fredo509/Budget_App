@@ -1,0 +1,68 @@
+.cat_header {
+  background-color: #3778C2;
+  height: 30px;
+  margin-top: -20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.p_title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.category_block {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.category_card {
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  width: 85%;
+  align-items: space-between;
+  justify-content: space-between;
+  text-decoration: none;
+  margin: 8px;
+  padding: 1px;
+  text-align: center;
+  align-self: center;
+  box-sizing: border-box;
+  color: #434343;
+}
+
+.cat_img {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+}
+
+.cat_nd, .cat_nd p{
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 60%;
+}
+
+.cat_title {
+  font-size: large;
+}
+
+.cat_amount {
+  color: black;
+  font-weight: 800;
+  font-style: bold;
+}
