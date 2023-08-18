@@ -16,9 +16,9 @@ class TransactionsController < ApplicationController
     @transaction = @category.transactions.build(transaction_params)
 
     @transaction.author_id = current_user.id
-
+    @transaction.save
     if @transaction.save
-      redirect_to category_transactions_path(@category), notice: 'Transaction added successfully'
+      redirect_to category_path(@category), notice: 'Transaction added successfully'
     else
       render :new, alert: 'Failed to add transaction'
     end
@@ -29,7 +29,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
 
     if @transaction.destroy
-      redirect_to Category_transactions_path, notice: 'Transaction removed successfully'
+      redirect_to category_path, notice: 'Transaction removed successfully'
     else
       render :index, alert: 'Failed to remove Transaction'
     end
