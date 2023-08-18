@@ -7,10 +7,10 @@
     </div>
       <div class="info-user">
         <% if user_signed_in? %>
-          <p>Welcome, #{@user.name}</p>
-          <img src="https://cdn-icons-png.flaticon.com/512/520/520464.png" alt="Welcome image">
-          <%= link_to "Add new category", new_category_path %>
-          <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+          <p>Welcome, <%= current_user.name %> &#x1F604; </p>
+          <%= link_to "Add new category", new_category_path, class: "category-link" %>
+          <%= link_to "View my category list", categories_path, class: "category-link" %>
+          <%= button_to "<- Log out", destroy_user_session_path, method: :delete, class:"log-out" %>
         <% else %>
           <%= link_to "Sign in", new_user_session_path, class: "sign-link" %>
           <%= link_to "Sign up", new_user_registration_path, class: "sign-link" %>
