@@ -15,7 +15,7 @@
     </div>
     <div class="field", style="margin: 10px 0;">
       <%= form.label :category.name %>
-      <%= form.collection_select :category.name, Category.all, :id, :name, prompt: "Select a category" %>
+      <%= form.collection_select :category_id, current_user.categories, :id, :name, prompt: "Select a category" %>
     </div>
     <div class="field">
       <%= form.label :amount %>
