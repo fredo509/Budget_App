@@ -2,7 +2,7 @@
 <div class="cat_header">
  <div class="i_back"> <%= link_to "<", root_path, class:"back" %></div>
  <div class="p_title">My Categories</div>
- <div class="i_menu"></div>
+ <div class="i_menu"><img src="https://icon-library.com/images/white-search-icon-png/white-search-icon-png-4.jpg" alt="No transactions_img" style="width: 150px;"></div>
 </div>
 
 <div id="categories">
@@ -20,7 +20,7 @@
             <p><%= category.created_at.to_date %></p>
           </div>
           <div class="cat_t">
-            <p class="cat_amount">$<%= Transaction.where(category_id: category.id).sum(:amount) %></p>
+            <p class="cat_amount">Total Amount $<%= Transaction.where(category_id: category.id).sum(:amount) %></p>
           </div>
         <% end %>
 <%= button_to 'Remove', category_path(id: category.id), method: :delete, data: { turbo_confirm: 'Are you sure to remove?' }, class: 'cat_remove', authenticity_token: true %>

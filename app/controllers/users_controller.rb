@@ -11,6 +11,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.fetch(:user, {:name})
+      params.fetch(:user, :name)
     end
 end

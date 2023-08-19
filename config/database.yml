@@ -16,11 +16,8 @@ development:
 
 production:
   <<: *default
-  database: Budget_app_production
-  username: postgres
-  #kindly replace your database password
-  password: 1234
-
+  url: <%= ENV["DATABASE_URL"] %>
+  
 test:
   <<: *default
   database: Budget_app_test

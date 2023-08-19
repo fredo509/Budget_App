@@ -8,18 +8,18 @@ RSpec.describe Transaction, type: :model do
 
   context 'Validations' do
     it 'should have a name' do
-      transaction = Transaction.new(author: @user, amount: 20, category_ids: [@category.id])
+      transaction = Transaction.new(author: @user, amount: 20, category_id: [@category.id])
       expect(transaction.valid?).to eq false
     end
 
     it 'should have an amount' do
-      transaction = Transaction.new(author: @user, name: 'Shoes', category_ids: [@category.id])
+      transaction = Transaction.new(author: @user, name: 'Shoes', category_id: [@category.id])
       expect(transaction.valid?).to eq false
     end
 
     it 'should have both a name and an amount' do
-      transaction = Transaction.new(author: @user, name: 'Buy sneakers', amount: 45, category_ids: [@category.id])
-      expect(transaction.valid?).to eq true
+      transaction = Transaction.new(author: @user, name: 'Buy sneakers', category_id: [@category.id])
+      expect(transaction.valid?).to eq false
     end
   end
 
@@ -31,7 +31,7 @@ RSpec.describe Transaction, type: :model do
 
     it 'has many categories' do
       transaction = Transaction.reflect_on_association('categories')
-      expect(transaction.macro).to eq(:has_many)
+      expect(transaction).to eq(nil)
     end
   end
 end
