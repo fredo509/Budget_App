@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   belongs_to :author, class_name: 'User'
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
 
   validates :name, presence: true
   validates :icon, presence: true

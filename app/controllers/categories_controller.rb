@@ -30,6 +30,17 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+   @user = current_user
+    @category = Category.find(params[:id])
+
+    if @category.destroy
+      redirect_to categories_path, notice: 'Category removed !'
+    else
+      render :index, alert: 'Failed to remove category'
+    end
+  end  
+
   private
 
   def category_params

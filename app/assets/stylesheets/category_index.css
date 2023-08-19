@@ -73,3 +73,10 @@
   font-weight: 800;
   font-style: bold;
 }
+
+.cat_remove {
+ border-radius: 15px;
+ background-color: white;
+ color: red;
+ border-color: red;
+}

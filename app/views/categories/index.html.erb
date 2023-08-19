@@ -22,7 +22,8 @@
           <div class="cat_t">
             <p class="cat_amount">$<%= Transaction.where(category_id: category.id).sum(:amount) %></p>
           </div>
-        <% end %>  
+        <% end %>
+<%= button_to 'Remove', category_path(id: category.id), method: :delete, data: { turbo_confirm: 'Are you sure to remove?' }, class: 'cat_remove', authenticity_token: true %>
       </li>  
     <% end %>
   </ul>  
