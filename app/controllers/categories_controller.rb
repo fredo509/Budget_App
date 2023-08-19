@@ -26,7 +26,8 @@ class CategoriesController < ApplicationController
       flash[:notice] = 'Category successfully created'
       redirect_to categories_path
     else
-      render :new, status: :unprocessable_entity
+      flash[:notice] = 'Please make sure you are using url in the icon field'
+      redirect_to new_category_path
     end
   end
 
