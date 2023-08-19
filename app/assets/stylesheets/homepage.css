@@ -10,7 +10,7 @@
 .logo {
   height: 33vh;
   margin: 0;
-  background-color: #3778C2;
+  background-color: #3778c2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,8 +55,8 @@
 
 .sign-link {
   width: 40%;
-  background-color: #3778C2;
-  ;
+  background-color: #3778c2;
+  
   margin-top: 50px;
   padding: 10px;
   border-radius: 20px;
@@ -73,8 +73,8 @@
 
 .category-link {
   width: 40%;
-  background-color: #3778C2;
-  ;
+  background-color: #3778c2;
+  
   margin-top: 50px;
   padding: 10px;
   border-radius: 20px;
@@ -86,7 +86,6 @@
 
 .category-link:hover {
   color: white;
-  border-color: #5fb523;
   border-color: #5fb523;
   background-color: #5fb523;
 }

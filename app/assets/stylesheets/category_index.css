@@ -1,5 +1,5 @@
 .cat_header {
-  background-color: #3778C2;
+  background-color: #3778c2;
   height: 30px;
   display: flex;
   justify-content: space-between;
@@ -32,7 +32,6 @@
   border-radius: 15px;
   display: flex;
   width: 85%;
-  align-items: space-between;
   justify-content: space-between;
   text-decoration: none;
   margin: 8px;
@@ -54,7 +53,8 @@
   border-radius: 12px;
 }
 
-.cat_nd, .cat_nd p{
+.cat_nd,
+.cat_nd p {
   padding: 0;
   margin: 0;
   flex-direction: column;
@@ -71,12 +71,11 @@
 .cat_amount {
   color: black;
   font-weight: 800;
-  font-style: bold;
 }
 
 .cat_remove {
- border-radius: 15px;
- background-color: white;
- color: red;
- border-color: red;
+  border-radius: 15px;
+  background-color: white;
+  color: red;
+  border-color: red;
 }
