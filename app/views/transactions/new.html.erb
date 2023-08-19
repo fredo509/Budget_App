@@ -2,16 +2,20 @@
 <%= stylesheet_link_tag 'category_index' %>
 
 <div class="cat_header">
- <div class="i_back"> <%= link_to "<", category_path(@category), class:"back" %></div>
+
  <div class="p_title">New Transaction</div>
  <div class="i_menu"><img src="https://icon-library.com/images/white-search-icon-png/white-search-icon-png-4.jpg" alt="No transactions_img" style="width: 150px;"></div>
 </div>
 
 <div class="myform">
-  <%= form_with model: @transaction, url: category_transactions_path(@category), html: { class: "login-form" } do |form| %>
+  <%= form_with model: [@category, @transaction], url: category_transactions_path(@category), html: { class: "login-form" } do |form| %>
     <div class="field">
       <%= form.label :name %>
       <%= form.text_field :name, class:"input-field",placeholder: "Enter transaction name" %>
+    </div>
+    <div class="field", style="margin: 10px 0;">
+      <%= form.label :category.name %>
+      <%= form.collection_select :category.name, Category.all, :id, :name, prompt: "Select a category" %>
     </div>
     <div class="field">
       <%= form.label :amount %>
