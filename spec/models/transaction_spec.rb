@@ -2,7 +2,7 @@ require_relative '../rails_helper'
 
 RSpec.describe Transaction, type: :model do
   before(:example) do
-    @user = User.create(name: 'Fredo')
+    @user = User.create(name: 'Fredo', email: 'fred@example.com', password: "123456")
     @category = Category.new(author: @user, name: 'Sport', icon: 'https://cdn-icons-png.flaticon.com/512/3311/3311579.png')
   end
 

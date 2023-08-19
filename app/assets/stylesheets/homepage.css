@@ -1,0 +1,89 @@
+.welcome-page {
+  width: 100%;
+  height: auto;
+  margin-top: -16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  height: 33vh;
+  margin: 0;
+  background-color: #3778c2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px;
+  border-bottom-right-radius: 100%;
+  animation-name: logoAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+.logo_text {
+  color: lightgreen;
+  margin-bottom: -10px;
+}
+
+.text-welcome {
+  color: white;
+}
+
+@keyframes logoAnimation {
+  0% {
+    height: 5vh;
+  }
+
+  100% {
+    height: 33vh;
+  }
+}
+
+.info-user {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3px 0;
+  height: 62vh;
+  text-align: center;
+}
+
+.sign-link {
+  width: 40%;
+  background-color: #3778c2;
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 20px;
+  color: #434343;
+  align-self: center;
+  text-decoration: none;
+  border: solid #434343 2.5px;
+}
+
+.sign-link:hover {
+  border-color: #5fb523;
+  background-color: #5fb523;
+}
+
+.category-link {
+  width: 40%;
+  background-color: #3778c2;
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 20px;
+  color: #434343;
+  align-self: center;
+  text-decoration: none;
+  border: solid #434343 2.5px;
+}
+
+.category-link:hover {
+  color: white;
+  border-color: #5fb523;
+  background-color: #5fb523;
+}

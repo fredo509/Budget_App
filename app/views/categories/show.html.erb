@@ -1,10 +1,50 @@
-<p style="color: green"><%= notice %></p>
+<%= stylesheet_link_tag 'category_index' %>
+<%= stylesheet_link_tag 'category_show' %>
 
-<%= render @category %>
-
+<div class="cat_header">
+ <div class="i_back"> <%= link_to "<", categories_path, class:"back" %></div>
+ <div class="p_title"> Transactions </div>
+ <div class="i_menu"></div>
+</div>
 <div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
 
-  <%= button_to "Destroy this category", @category, method: :delete %>
+ <ul class="category_block" style="margin-bottom: -45px">
+      <li class="category_card">
+          <div class="cat_img">
+            <%= image_tag(@category.icon, alt: "Icon pic", class:"cat_img") %>
+          </div>
+          <div class="cat_nd">
+            <p class="cat_title">Category : <%= "#{@category.name}" %></p>
+            <p><%= @category.created_at.to_date %></p>
+          </div>
+          <div class="cat_t">
+            <p class="cat_amount">Total Amount $<%= @total_amount %></p>
+          </div>
+      </li>  
+  </ul> 
+
+  <% if @total_amount == 0 %>
+    <p style="text-align: center; color:red">No transactions found</p>
+    <div style="display:flex; justify-content:center">
+      <img src="https://cdn-icons-png.flaticon.com/512/8541/8541407.png" alt="No transactions_img" style="width: 50%;">
+    </div>  
+ <% else %>
+    <ul class="category_block">
+     <% @transactions.each do |transaction| %>
+        <li class="category_card transaction_card">
+            <div class="cat_img">
+              <%= image_tag(@category.icon, alt: "Icon pic", class:"cat_img") %>
+            </div>
+            <div class="cat_nd">
+              <p class="cat_title">Transaction : <%= "#{transaction.name}" %></p>
+              <p><%= transaction.created_at.to_date %></p>
+            </div>
+            <div class="cat_t">
+              <p class="cat_"> Amount $<%= transaction.amount %></p>
+            </div> 
+        </li>  
+      <% end %>  
+    </ul> 
+  <% end %>
+  <%= link_to "Add transaction", new_category_transaction_path(@category), class: "log-out" %>
 </div>
