@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag 'signIn' %>
+<%= stylesheet_link_tag 'category_index' %>
+
+<div class="cat_header">
+ <div class="i_back"> <%= link_to "<", root_path, class:"back" %></div>
+ <div class="p_title">New Categories</div>
+ <div class="i_menu"><img src="https://icon-library.com/images/white-search-icon-png/white-search-icon-png-4.jpg" alt="No transactions_img" style="width: 150px;"></div>
+</div>
+<div class="myform">
+  <p class="notice", style="color:red;"><%= notice %></p>
+  <%= form_with model: @category,  html: { class: "login-form" } do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class:"input-field" %>
+    </div>
+    <div class="field">
+      <%= form.label :icon %>
+      <%= form.text_field :icon, placeholder: "Icon URL", class:"input-field" %>
+    </div>
+    <div >
+      <%= form.submit "Add Category", class: "submit-button" %>
+    </div>
+  <% end %>
+</div>
+

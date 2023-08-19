@@ -1,0 +1,44 @@
+<%= stylesheet_link_tag 'signIn' %>
+<div class="header">
+  <%= link_to "<", root_path, class:"back" %>
+  <div class="logo ls">
+    <h1 class="logo_text">G-Wallet</h1>
+  </div>
+</div>
+
+<div class="myform">
+  <div class="welcome-back">
+    <h2>Sign up</h2>
+  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "login-form" }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <div>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-field" %>
+  </div>
+
+  <div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, class:"input-field" %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:"6 characters minimum", class:"input-field" %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-field" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "submit-button" %>
+  </div>
+
+  <%= render "users/shared/links" %>
+<% end %>
+</div>

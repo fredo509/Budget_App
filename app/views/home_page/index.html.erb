@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag 'homepage' %>
+<body>
+  <main class="welcome-page">
+    <div class="logo">
+      <h1 class="logo_text">G-Wallet</h1>
+      <p class="text-welcome">The best money management solution </p>
+    </div>
+      <div class="info-user">
+        <% if user_signed_in? %>
+          <p>Welcome, <%= current_user.name %> &#x1F604; </p>
+          <%= link_to "Add new category", new_category_path, class: "category-link" %>
+          <%= link_to "View my category list", categories_path, class: "category-link" %>
+          <%= button_to "<- Log out", destroy_user_session_path, method: :delete, class:"log-out" %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class: "sign-link" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "sign-link" %>
+        <% end %>
+    </div>
+  </main>
+</body>

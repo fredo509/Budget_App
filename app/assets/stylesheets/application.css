@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(225, 224, 224);
+}
+
+.back {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  color: white;
+  padding: 7px;
+}
+
+.log-out {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 20px;
+  min-width: 90px;
+  background-color: #3778c2;
+  padding: 5px;
+  border-radius: 20px;
+  color: #434343;
+  align-self: center;
+  text-decoration: none;
+  margin-bottom: 10px;
+  z-index: 3;
+}
+
+.log-out:hover {
+  color: white;
+  border-color: #5fb523;
+  background-color: #5fb523;
+}

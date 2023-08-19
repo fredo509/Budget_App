@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  #kindly replace your database user acces
+  username: postgres
+  #kindly replace your database password
+  password: 1234
+
+development:
+  <<: *default
+  database: Budget_app_development
+  username: postgres
+  #kindly replace your database password
+  password: 1234
+
+production:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+  
+test:
+  <<: *default
+  database: Budget_app_test
+  username: postgres
+  #kindly replace your database password
+  password: 1234
