@@ -17,11 +17,7 @@ development:
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
-  database: your_app_production
-  username: yourusername
-  #kindly replace your database password
-  password: <%= ENV["YOUR_APP_DATABASE_PASSWORD"] %>
-
+  
 test:
   <<: *default
   database: Budget_app_test
